@@ -1,1 +1,13 @@
 # SDITO
+#!/bin/bash
+apt-get update
+apt-get install -y nginx
+systemctl start nginx
+systemctl enable nginx
+apt-get install -y git
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+apt-get install -y nodejs
+git clone YourRepositoryURLhere
+cd YourRepositoryNamehere/
+npm install
+node index.js
