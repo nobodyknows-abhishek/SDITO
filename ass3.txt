@@ -1,0 +1,41 @@
+1.select count(*) from sales_order 
+//Count the total number of orders.
+
+2.select avg(product_rate) from sales_order_details;
+//Calculate the average price of all the products.
+
+3.select count(product_no) from product_master where sell_price>=1500;
+//Count the number of products having price greater than or equal to 1500.
+
+4.select  max(sell_price) max_price, min(sell_price) min_price from product_master;
+//Determine the maximum and minimum product prices. Rename the output as
+max_price andmin_price respectively.
+
+5-a.Update client_master set city='Madras' where client_no='C0005';
+//Change the City of the Client_no ‘C005’ to ‘Madras’.
+5-b.select city from client_master where client_no='C0005';
+
+6.Update client_master set balance_due=3000 where client_no='C0005';
+//Change the Bal_due of Client_no ‘C005’ to Rs.3000/-.
+
+7.delete from client_master where state='TamilNadu';
+//Delete from client_master where the column state holds the value ‘Tamilnadu’.
+
+8-a.Alter table client_master add(telephone number(10));
+b.desc client_master;
+//Add a column called ‘Telephone’ of data type ‘number’ and size 10 in the table client_master.
+
+9-a.Alter table client_master modify(pincode number(10));
+b.desc client_master;
+//Change the size of data type Pin_code to 10 in the table client_master.
+
+10.Alter table client_master drop(address2);
+b.desc client_master;
+11-a. Create table client_master_duplicate as select * from client_master where 1=2;
+b.select * from client_master_duplicate;
+c.desc client_master_duplicate;
+12.insert into client_master_duplicate select * from client_master;
+13.rename client_master_duplicate to c_master;
+desc c_master;
+desc client_master_duplicate;
+14. drop table c_master;
